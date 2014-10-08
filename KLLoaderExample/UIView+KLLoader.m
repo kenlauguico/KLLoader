@@ -12,11 +12,16 @@
 
 - (void)kl_showLoader
 {
+    CGSize viewSize = self.frame.size;
+    
     UIActivityIndicatorView *loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-    loader.center = self.center;
+    loader.frame = self.bounds;
+    loader.center = (CGPoint){viewSize.width/2, viewSize.height/2};
     [loader startAnimating];
     
     [self addSubview:loader];
+    
+    self.tag = 1;
 }
 
 - (void)kl_dismissLoader
@@ -24,6 +29,20 @@
     for (id view in self.subviews) {
         if ([view isKindOfClass:[UIActivityIndicatorView class]])
             [view removeFromSuperview];
+    }
+    
+    self.tag = 0;
+}
+
+- (void)kl_addLoader:(UIActivityIndicatorView *)loader
+{
+    if ([self isKindOfClass:[UITextField class]]) {
+        
+        [[(UITextField *)self rightView] addSubview:loader];
+        
+    } else {
+        
+        [self addSubview:loader];
     }
 }
 

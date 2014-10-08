@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIStepper *uiStepper;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+@property (strong, nonatomic) IBOutlet UISwitch *uiSwitch;
+
+- (IBAction)clearLoading_pressed:(id)sender;
 
 @end
 

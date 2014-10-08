@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIView+KLLoader.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self addTouchObservers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +25,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addTouchObservers
+{
+    [_button addTarget:self action:@selector(addLoader:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_uiSwitch addTarget:self action:@selector(addLoader:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_uiStepper addTarget:self action:@selector(addLoader:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+}
+
+- (void)addLoader:(UIView *)sender
+{
+    if (sender.tag == 0) {
+        [sender kl_showLoader];
+    }
+}
+
+- (IBAction)clearLoading_pressed:(id)sender
+{
+    [_button kl_dismissLoader];
+    [_uiSwitch kl_dismissLoader];
+    [_uiStepper kl_dismissLoader];
+}
 @end
