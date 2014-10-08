@@ -3,7 +3,7 @@ KLLoader
 Make just about any UIView load with this simple category.
 
 <p align="center">
-  <img src="http://i.imgur.com/V6AEcLN.png" style="width: 50%; height: auto;" />
+  <img src="http://i.imgur.com/V6AEcLN.png" width="292" height="437" />
 </p>
 
 Usage
