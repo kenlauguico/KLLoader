@@ -21,6 +21,7 @@
     
     [self addSubview:loader];
     
+    // 1 = loading
     self.tag = 1;
 }
 
@@ -31,19 +32,8 @@
             [view removeFromSuperview];
     }
     
+    // 0 = not loading
     self.tag = 0;
-}
-
-- (void)kl_addLoader:(UIActivityIndicatorView *)loader
-{
-    if ([self isKindOfClass:[UITextField class]]) {
-        
-        [[(UITextField *)self rightView] addSubview:loader];
-        
-    } else {
-        
-        [self addSubview:loader];
-    }
 }
 
 @end
