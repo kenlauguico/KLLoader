@@ -1,6 +1,6 @@
 KLLoader
 ===
-Make just about any UIView load with this simple extension.
+Make just about any UIView load with this simple category.
 
 Usage
 ---
