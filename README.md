@@ -2,6 +2,10 @@ KLLoader
 ===
 Make just about any UIView load with this simple category.
 
+<p align="center">
+  <img src="http://i.imgur.com/V6AEcLN.png" style="width: 50%; height: auto;" />
+</p>
+
 Usage
 ---
 Import the header at the top of your file.
